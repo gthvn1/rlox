@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: monospace;
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em;
+      }
+
+      #output {
+        background-color: #2b2b2b;
+        color: #c0ffb3;
+        border: 1px solid #444;
+        padding: 1em;
+        width: 80%;
+        min-height: 100px;
+        margin-bottom: 1em;
+        white-space: pre-wrap;
+        font-size: 1em;
+      }
+
+      textarea {
+        background-color: #202020;
+        color: #ffffff;
+        border: 1px solid #444;
+        width: 80%;
+        height: 150px;
+        padding: 1em;
+        font-family: monospace;
+        font-size: 1em;
+        resize: vertical;
+      }
+
+      button {
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        font-size: 1em;
+        background-color: #444;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="output"> // Output will appear here</div>
+    <textarea id="input">// Write some Lox here</textarea>
+    <br />
+    <button id="scan-button">Scan</button>
+
+    <script type="module">
+      import init, { scan } from './pkg/rlox_web.js';
+
+      async function main() {      
+        await init();
+        document.getElementById("scan-button").addEventListener("click", () => {
+          const code = document.getElementById("input").value;
+          const result = scan(code);
+          document.getElementById("output").textContent = result;
+        });
+      }
+
+      main();
+    </script>
+  </body>
+</html>

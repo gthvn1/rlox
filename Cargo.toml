@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "rlox-web",
+  "rlox-interpreter",
+]
+
+resolver = "3"
