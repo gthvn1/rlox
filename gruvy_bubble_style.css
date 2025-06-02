@@ -2,8 +2,8 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #1976D2;
-  color: #034a6f;
+  background: #282828;       /* dark brown */
+  color: #ebdbb2;            /* light beige */
 }
 
 .main-container {
@@ -18,8 +18,8 @@ html, body {
   flex: 1;  /* take remaining width */
   display: flex;
   flex-direction: column;
-  height: 90vh; /* 90% of viewport height */
-  background-color: #e9f0f7; /* subtle bluish-grey */
+  height: 95vh; /* 95% of viewport height */
+  background-color: #3c3836; /* medium brown */
   border-radius: 8px;
   padding: 10px;
   box-sizing: border-box;
@@ -34,8 +34,9 @@ html, body {
   font-size: 14px;
   resize: none;
   box-sizing: border-box;
-  background: #f8fbff;
-  border: 1px solid #ccc;
+  background: #504945;      /* lighter brown */
+  border: 1px solid #665c54; /* darker border */
+  color: #ebdbb2;           /* light text */
 }
 
 .left-panel button {
@@ -45,13 +46,13 @@ html, body {
   cursor: pointer;
   border-radius: 6px;
   border: none;
-  background-color: #4287f5;
-  color: white;
+  background-color: #d65d0e; /* orange */
+  color: #fbf1c7;            /* light beige */
   transition: background-color 0.3s;
 }
 
 .left-panel button:hover {
-  background-color: #306fd0;
+  background-color: #b3500b; /* darker orange */
 }
 
 .right-panel {
@@ -59,15 +60,15 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 15px; /* space between stacked textareas */
-  background-color: #f6f6f6; /* slightly different grey */
+  background-color: #3c3836; /* same medium brown for consistency */
   border-radius: 8px;
   padding: 10px;
   box-sizing: border-box;
-  height: 90vh; /* same height as left panel */
+  height: 95vh; /* same height as left panel */
 }
 
 .right-panel textarea {
-  height: calc((90vh - 30px) / 3); /* split height evenly minus gaps */
+  height: calc((95vh - 30px) / 3); /* split height evenly minus gaps */
   width: 100%;
   border-radius: 8px;
   padding: 10px;
@@ -75,8 +76,9 @@ html, body {
   font-size: 14px;
   resize: none;
   box-sizing: border-box;
-  background: #ffffff;
-  border: 1px solid #ccc;
+  background: #504945;      /* lighter brown */
+  border: 1px solid #665c54; /* darker border */
+  color: #ebdbb2;           /* light text */
 }
 
 .bubbles {
@@ -94,7 +96,7 @@ html, body {
   bottom: -50px;
   width: 20px;
   height: 20px;
-  background: rgba(173, 216, 230, 0.3);
+  background: rgba(214, 93, 14, 0.3); /* warm orange translucent */
   border-radius: 50%;
   animation: rise 8s linear infinite;
   opacity: 0.6;

@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="aqua_style.css"
+    <link rel="stylesheet" href="gruvy_bubble_style.css"
   </head>
   <body>
-    <textarea id="output" rows="20"> // Output will appear here</textarea>
-    <textarea id="input" rows="10"> // Write some Lox here</textarea>
-    <br />
-    <button id="scan-button">Scan</button>
+
+    <div class="bubbles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="main-container">
+      <div class="left-panel">
+        <textarea id="input" rows="30" placeholder="// Write some Lox here"></textarea>
+        <br />
+        <button id="scan-button">Run RLOX</button>
+      </div>
+      <div class="right-panel">
+        <textarea id="scan-output" placeholder="Scan output"></textarea>
+        <textarea id="parse-output" placeholder="Parse output"></textarea>
+        <textarea id="expr-output" placeholder="Expression output"></textarea>
+      </div>
+    </div>
 
     <script type="module">
       import init, { scan } from './rlox-web/pkg/rlox_web.js';
@@ -17,7 +30,7 @@
         document.getElementById("scan-button").addEventListener("click", () => {
           const code = document.getElementById("input").value;
           const result = scan(code);
-          document.getElementById("output").textContent = result;
+          document.getElementById("scan-output").textContent = result;
         });
       }
 
