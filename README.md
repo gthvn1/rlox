@@ -18,8 +18,11 @@ This is a Cargo workspace with the following members:
 git clone https://github.com/gthvn1/rlox.git
 cd rlox
 cargo build
-cd rlox-web
-wasm-pack build --target web
+
+# It should build the web part. If doesn't work you can build the web part
+# by doing:
+#   cd rlox-web
+#   wasm-pack build --target web
 # This will generate pkg/ folder needed for the browser
 python3 -m http.server
 ```
