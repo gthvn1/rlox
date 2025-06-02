@@ -12,11 +12,9 @@ This is a Cargo workspace with the following members:
 
 ## Getting Started
 
-### 1. Clone the repository
+### Build
 
 ```bash
-git clone https://github.com/gthvn1/rlox.git
-cd rlox
 cargo build
 
 # It should build the web part. If doesn't work you can build the web part
