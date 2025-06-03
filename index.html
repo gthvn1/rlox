@@ -11,7 +11,18 @@
 
     <div class="main-container">
       <div class="left-panel">
-        <textarea id="input" rows="30" placeholder="// Write some Lox here"></textarea>
+        <textarea id="input" rows="30" placeholder="// Write some Lox here">andy formless fo _ _123 _abc ab123
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_
+
+// expect: IDENTIFIER andy null
+// expect: IDENTIFIER formless null
+// expect: IDENTIFIER fo null
+// expect: IDENTIFIER _ null
+// expect: IDENTIFIER _123 null
+// expect: IDENTIFIER _abc null
+// expect: IDENTIFIER ab123 null
+// expect: IDENTIFIER abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_ null
+// expect: EOF  null</textarea>
         <br />
         <button id="scan-button">Run RLOX</button>
       </div>
