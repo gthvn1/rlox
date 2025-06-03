@@ -1,6 +1,6 @@
 use std::fmt::Display;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum TokenType {
     // Single-character tokens.
     LeftParen,
@@ -52,6 +52,7 @@ pub enum TokenType {
 }
 
 #[allow(dead_code)]
+#[derive(Clone)]
 pub struct Token {
     token_type: TokenType,
     lexeme: String, // raw string find in source. As we will implement a REPL we use String because we're not sure about the lifetime of the source in a REPL

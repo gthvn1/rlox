@@ -1,3 +1,3 @@
 mod error;
 pub mod scanner;
-mod token;
+pub mod token;
