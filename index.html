@@ -23,13 +23,16 @@
     </div>
 
     <script type="module">
-      import init, { scan } from './rlox-web/pkg/rlox_web.js';
+      import init, { Session } from './rlox-web/pkg/rlox_web.js';
 
-      async function main() {      
+      async function main() {
         await init();
+
+        const session = new Session();
+
         document.getElementById("scan-button").addEventListener("click", () => {
           const code = document.getElementById("input").value;
-          const result = scan(code);
+          const result = session.scan(code);
           document.getElementById("scan-output").textContent = result;
         });
       }

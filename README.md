@@ -12,17 +12,14 @@ This is a Cargo workspace with the following members:
 
 ## Getting Started
 
-### Build
+### Build & Run
+
+- We are using [wasm-pack](https://github.com/rustwasm/wasm-pack) to build the wasm module.
 
 ```bash
 cargo build
-
-# It should build the web part. If doesn't work you can build the web part
-# by doing:
-#   cd rlox-web
-#   wasm-pack build --target web
-# This will generate pkg/ folder needed for the browser
+(cd rlox-web;  wasm-pack build --target web)
 python3 -m http.server
 ```
 
-You should be able to open your browser at `http://localhost:8000`
+You should be able to open your browser at `http://localhost:8000` (maybe hard reload it...)
