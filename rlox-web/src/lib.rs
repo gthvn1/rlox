@@ -19,6 +19,7 @@ pub struct Session {
     tokens: Option<Vec<Token>>,
 }
 
+#[allow(clippy::new_without_default)]
 #[wasm_bindgen]
 impl Session {
     #[wasm_bindgen(constructor)]
