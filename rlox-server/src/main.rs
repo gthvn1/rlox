@@ -2,7 +2,7 @@ use std::io::{BufReader, Write};
 use std::net::{TcpListener, TcpStream};
 use std::thread;
 
-use rlox_server::http_message::request::Request;
+use rlox_server::http_message::{request::Request, response::to_response};
 
 fn handle_connection(stream: TcpStream) {
     // Please note that each call to read() may involve a system call, and therefore,
@@ -12,19 +12,12 @@ fn handle_connection(stream: TcpStream) {
     let mut stream_reader = BufReader::new(reader);
 
     let response = match Request::from_stream(&mut stream_reader) {
-        Ok(http_msg) => {
-            println!("method: {}", http_msg.get_method().unwrap_or("Not found"));
-            println!("path  : {}", http_msg.get_path().unwrap_or("Not found"));
-            "HTTP/1.1 200 OK\r\n\r\n".to_string()
-        }
-        Err(_) => {
-            eprintln!("Failed to parse request");
-            "HTTP/1.1 500 Internal Server Error\r\n\r\n".to_string()
-        }
+        Ok(http_msg) => to_response(http_msg),
+        Err(_) => b"HTTP/1.1 500 Internal Server Error\r\n\r\n".to_vec(),
     };
 
     stream_writer
-        .write_all(response.as_bytes())
+        .write_all(&response)
         .expect("failed to write response");
 }
 
