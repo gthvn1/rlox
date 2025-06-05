@@ -10,6 +10,7 @@ use std::net::TcpStream;
 
 const CRLF: &str = "\r\n";
 
+#[allow(dead_code)]
 pub struct Request {
     request_line: String,
     fields: HashMap<String, String>, // can be empty

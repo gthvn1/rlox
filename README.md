@@ -9,19 +9,13 @@ This is a Cargo workspace with the following members:
 
 - `rlox-interpreter`: Core Lox interpreter logic
 - `rlox-web`: WebAssembly REPL for running Lox in the browser
-- `rlox-server` (WIP): Lightweight HTTP server in Rust
+- `rlox-server`: Lightweight HTTP server in Rust for our purpose
 
 ## Getting Started
 
 ### Build & Run
 
 - We are using [wasm-pack](https://github.com/rustwasm/wasm-pack) to build the wasm module.
-
-```bash
-cargo build
-(cd rlox-web;  wasm-pack build --target web)
-python3 -m http.server
-```
-
-- You should be able to open your browser at `http://localhost:8000` (maybe hard reload it...).
-- While our `rlox-server` is a work in progress we use the python module http.
+- Just do: `run.sh`
+  - It will build and install stuff.
+- You should be able to open your browser at `http://localhost:1234` (maybe hard reload it...).
