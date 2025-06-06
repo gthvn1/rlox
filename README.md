@@ -9,7 +9,7 @@ This is a Cargo workspace with the following members:
 
 - `rlox-interpreter`: Core Lox interpreter logic
 - `rlox-web`: WebAssembly REPL for running Lox in the browser
-- `rlox-server`: Lightweight HTTP server in Rust for our purpose
+- `rlox-server`: Lightweight HTTP server for our purpose
 
 ## Getting Started
 
