@@ -11,8 +11,8 @@ pub const PATH_FAVICON: &str = "/favicon.ico";
 
 pub const FILE_INDEX_HTML: &str = "./static/index.html";
 pub const FILE_STYLE_CSS: &str = "./static/css/style.css";
-pub const FILE_JS: &str = "./static/rlox_web.js";
-pub const FILE_WASM: &str = "./static/rlox_web_bg.wasm";
+pub const FILE_JS: &str = "./rlox-web/pkg/rlox_web.js";
+pub const FILE_WASM: &str = "./rlox-web/pkg/rlox_web_bg.wasm";
 pub const FILE_FAVICON: &str = "./static/favicon/favicon-32x32.png";
 
 pub const TYPE_HTML: &str = "text/html";
