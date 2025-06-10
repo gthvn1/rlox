@@ -43,8 +43,12 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_
 
         document.getElementById("scan-button").addEventListener("click", () => {
           const code = document.getElementById("input").value;
-          const result = session.scan(code);
-          document.getElementById("scan-output").textContent = result;
+
+          const toks = session.scan(code);
+          document.getElementById("scan-output").textContent = toks;
+
+          const parsing = session.parse();
+          document.getElementById("parse-output").textContent = parsing;
         });
       }
 

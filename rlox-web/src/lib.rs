@@ -1,6 +1,6 @@
 mod utils;
 
-use rlox_interpreter::interpreter::{scanner::Scanner, token::Token};
+use rlox_interpreter::interpreter::{parser::Parser, scanner::Scanner, token::Token};
 
 use wasm_bindgen::prelude::*;
 
@@ -37,5 +37,14 @@ impl Session {
             .map(|t| t.to_string())
             .collect::<Vec<_>>()
             .join("\n")
+    }
+
+    pub fn parse(&mut self) -> String {
+        if let Some(tokens) = &self.tokens {
+            let _ = Parser::from_tokens(tokens);
+            "Work is in progress...".to_string()
+        } else {
+            "Internal Error: scan not called".to_string()
+        }
     }
 }
